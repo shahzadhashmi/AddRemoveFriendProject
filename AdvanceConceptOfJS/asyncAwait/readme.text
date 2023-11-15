@@ -1,0 +1,51 @@
+sync and async kia hota ha?
+
+go to this link
+https://www.youtube.com/watch?v=6kE8lrqfwHo
+
+
+sync: AK kam kathm ho ga tu dusra start ho ga. 
+=> ye js ma single thread ki tarha kam krta ha.
+=> line by line read code
+
+Example: 
+
+task- 1: take 5sec  
+task- 2: take 2sec 
+task- 3: take 3sec 
+task- 4: take 10sec 
+
+sync ma agr task 2, 2sec ly raha ha tu wo b task 1 k end hony ka wait kry ga us k bad task2 chly ga.
+
+async: Saare kaam ak sath start ho skty hain or jis ka kam kathm ho jye ga wo apna response ya result dy dy ga.
+=> ye dusry kam ka wait ni karay ga.
+=> Ye Js ma multithread ki tarha kaam krta ha.
+
+Example: 
+
+task- 1: take 5sec 
+task- 2: take 2sec 
+task- 3: take 3sec 
+task- 4: take 10sec 
+
+async ma agr task 2, 2sec ly raha ha tu wo b task 1 k end hony ka wait ni kry ga blky wo khud run ho jye ga or apna response ya result dy dy ga.
+
+
+TODO: Humain kesy pta chly ga hum sync ya async code likh rahay hain??
+
+agr hum in ma sy koi b kam kr rahay hain tu async code likh rahay hain.
+
+setTimeOut();
+setTimeInterval();
+axios,
+xmlHttpRequest,
+promises
+fetch
+
+=> in 6 k ilawa koi b code agr hum kr rahy hain tu wo sync code ma aye ga.
+ 
+
+Event Loop: 
+The main purpose of event loop is to pass data in main stack from side stack.
+1) Event loop is the mechanism that allows JavaScript to handle multiple tasks concurrently. It uses callback functions for asynchronous operations. 
+
