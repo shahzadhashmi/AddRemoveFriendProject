@@ -54,7 +54,7 @@ async function randomUserGenerator() {
     console.log(jsonData);
 }
 
-randomUserGenerator();
+// randomUserGenerator();
 
 // This code defines an async function named randomUserGenerator that uses the await keyword to simplify the handling of asynchronous operations when making an HTTP request to the "Random User Generator" API (https://randomuser.me/api/). The function logs the raw response and the parsed JSON data from the API.
 
@@ -83,4 +83,46 @@ randomUserGenerator();
 
 // Calls the randomUserGenerator function, initiating the entire asynchronous operation.
 // In summary, this code demonstrates the use of the async/await syntax to handle asynchronous operations more elegantly. It fetches data from the "Random User Generator" API, logs the raw response, and then logs the parsed JSON data. The await keyword simplifies the code by allowing you to write asynchronous code in a more synchronous style.
+
+// Some Practical example of async await
+
+// Example 1: Fetching Data from an API:
+async function fetchData() {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
+        // gives us raw data
+        console.log(response);
+        const parseData = await response.json();
+        // gives us parsed data
+        console.log(parseData);
+    } catch (error) {
+        console.error("Error!", error);
+    }
+}
+
+// fetchData();
+
+// Example 2:  Multiple API Requests:
+
+async function fetchUserData() {
+    try {
+        const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/1`);
+        console.log("userResponse", userResponse);
+        const userData = await userResponse.json();
+
+        const postResponse = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userData.id}`);
+        console.log("Post Response", postResponse);
+        const postData = await postResponse.json();
+
+        console.log("User: ", userData);
+        console.log("Posts: ", postData);
+    } catch (error) {
+        console.log("Error Fetching Data:", error);
+    }
+}
+
+// fetchUserData();
+
+// Example 3:  Promise-based Function with async/await:
+
 
